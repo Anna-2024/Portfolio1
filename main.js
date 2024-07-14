@@ -1,24 +1,71 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
+import "./style.css";
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+document.addEventListener("DOMContentLoaded", () => {
+  const Theme = { LIGHT: "light-theme", DARK: "dark-theme" };
+  const refs = {
+    body: document.querySelector("body"),
+    switch: document.querySelector(".theme-switch__toggle"),
+    burger: document.querySelector(".burger-menu"),
+    menu: document.querySelector(".menu"),
+    menuItems: document.querySelectorAll(".menu__item"),
+  };
+  const theme = localStorage.getItem("theme");
+  if (theme === Theme.LIGHT) {
+    refs.switch.textContent = "Light";
+    refs.body.classList.add(Theme.LIGHT);
+    // повісь клас на боді
+  }
+  if (theme === Theme.DARK) {
+    refs.switch.textContent = "Dark";
+    refs.body.classList.add(Theme.DARK);
+  }
 
-setupCounter(document.querySelector('#counter'))
+  refs.switch.addEventListener("click", onSwitchTheme);
+  refs.burger.addEventListener("click", onOpenMenu);
+  refs.menuItems.forEach((item) => item.addEventListener("click", onCloseMenu));
+  document.addEventListener("click", onCloseMenuByClickOutside);
+
+  function onSwitchTheme() {
+    const theme = localStorage.getItem("theme");
+    if (theme === Theme.LIGHT) {
+      refs.body.classList.remove(Theme.LIGHT);
+      refs.body.classList.add(Theme.DARK);
+      localStorage.setItem("theme", Theme.DARK);
+      refs.switch.textContent = "Dark";
+    }
+    if (theme === Theme.DARK) {
+      refs.body.classList.remove(Theme.DARK);
+      refs.body.classList.add(Theme.LIGHT);
+      localStorage.setItem("theme", Theme.LIGHT);
+      refs.switch.textContent = "Light";
+    }
+  }
+
+  function onOpenMenu() {
+    refs.menu.classList.toggle("is-open");
+  }
+
+  function onCloseMenu() {
+    refs.menu.classList.remove("is-open");
+  }
+
+  function onCloseMenuByClickOutside(event) {
+    if (
+      !refs.menu.contains(event.target) &&
+      !refs.burger.contains(event.target)
+    ) {
+      onCloseMenu();
+    }
+  }
+
+  function setTheme() {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === Theme.DARK) {
+      refs.body.classList.add(Theme.DARK);
+    } else {
+      refs.body.classList.add(Theme.LIGHT);
+    }
+  }
+
+  setTheme();
+});
