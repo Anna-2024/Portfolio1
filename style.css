@@ -773,10 +773,11 @@ align-items: center;
     margin: 0 auto;
   }
   .home-img img {
-    width: 30vw;
+    width: 50vw;
+    transform: translateY(80px);
   }
   .services h2 {
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
   }
   .services-container {
     grid-template-columns: repeat(1, 1fr);
