@@ -709,6 +709,11 @@ span{
     display: flex;
     flex-direction: column;
   }
+
+  .testimonials-box{
+align-items: center;
+  }
+
   .contact form {
     flex-direction: column;
   }
@@ -783,9 +788,7 @@ span{
   
   }
   .testimonials-box  {
-    display: grid;
-    grid-template-columns: (3);
-    gap: 3rem;
+    display: flex;
   }
 }
 
