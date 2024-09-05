@@ -694,8 +694,9 @@ span{
   .services {
     padding-bottom: 7rem;
   }
-  .testimonials .wrapper {
-    grid-template-columns: repeat(1, 1fr);
+  .wrapper { 
+    display: flex;
+    flex-direction: column;
   }
   .contact form {
     flex-direction: column;
@@ -758,6 +759,17 @@ span{
   }
   .services-container {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  .wrapper { 
+    display: flex;
+    flex-direction: column;
+  
+  }
+  .testimonials-box  {
+    display: grid;
+    grid-template-columns: (3);
+    gap: 3rem;
   }
 }
 
