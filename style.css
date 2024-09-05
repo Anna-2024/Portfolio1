@@ -180,7 +180,7 @@ span{
 .home-content h3{
     margin-bottom: 2rem;
     margin-top: 1rem;
-    font-size: 4rem;
+    font-size: 3rem;
 }
 .home-content h1{
     font-size: 8rem;
@@ -208,7 +208,7 @@ span{
 .home-content p{
     font-size: 1.5rem;
     font-weight: 500;
-    line-height: 1.8;
+    line-height: 1.5;
     max-width: 1000px;
 }
 .social-icons a{
@@ -656,13 +656,18 @@ span{
 
 @media (max-width: 1285px) {
   html {
-    font-size: 55%;
+    font-size: 50%;
   }
   .services-container {
     padding-bottom: 7rem;
     grid-template-columns: repeat(2, 1fr);
     margin: 0 5rem;
   }
+  .social-icons a{
+  
+    width: 4.5rem;
+    height: 4.5rem;
+ 
 }
 
 @media (max-width: 991px) {
@@ -704,6 +709,11 @@ span{
   #menu-icon {
     display: block;
   }
+
+  .social-icons a{
+    width: 7rem;
+    height: 7rem;
+  }
   .navbar {
     position: absolute;
     top: 100%;
@@ -724,22 +734,24 @@ span{
     color: white;
   }
   .home {
-    flex-direction: column column-reverse;
+    flex-direction: column-reverse ;
+    align-items: baseline;
     margin: 5rem 4rem;
+  }
+
   }
   .home-content h3 {
     font-size: 2.6rem;
   }
   .home-content h1 {
     font-size: 8rem;
-    margin-top: 3rem;
   }
   .home-content p {
     max-width: 600px;
     margin: 0 auto;
   }
   .home-img img {
-    width: 56vw;
+    width: 30vw;
   }
   .services h2 {
     margin-bottom: 3rem;
