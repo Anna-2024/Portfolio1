@@ -773,8 +773,7 @@ align-items: center;
     margin: 0 auto;
   }
   .home-img img {
-    width: 50vw;
-    transform: translateY(80px);
+    width: 60vw;
   }
   .services h2 {
     margin-bottom: 4rem;
