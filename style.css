@@ -659,15 +659,20 @@ span{
     font-size: 50%;
   }
   .services-container {
-    padding-bottom: 7rem;
     grid-template-columns: repeat(2, 1fr);
-    margin: 0 5rem;
+    margin: 0 5rem;  
+  }
+
+  .service-box {
+    height: 150px;
   }
   .social-icons a{
-  
-    width: 4.5rem;
-    height: 4.5rem;
- 
+    width: 5rem;
+    height: 5rem;
+}
+
+.social-img{
+  width: 20px;
 }
 
 @media (max-width: 991px) {
@@ -677,6 +682,12 @@ span{
   section {
     padding: 10rem 3% 2rem;
   }
+
+  .social-icons a{
+    width: 7rem;
+    height: 7rem;
+  }
+
   .timeline-items::before {
     left: 7px;
   }
@@ -712,9 +723,14 @@ span{
   }
 
   .social-icons a{
-    width: 7rem;
-    height: 7rem;
+    width: 5rem;
+    height: 5rem;
   }
+
+  .social-img{
+    width: 20px;
+  }
+
   .navbar {
     position: absolute;
     top: 100%;
